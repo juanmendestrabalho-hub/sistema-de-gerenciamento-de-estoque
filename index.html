@@ -1,1 +1,63 @@
 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StockPet PRO</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<!-- XLSX -->
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+</head>
+<body>
+
+<header>
+    <h1>📦 StockPet PRO</h1>
+</header>
+
+<!-- DASHBOARD -->
+<section class="dashboard">
+    <div>Total Produtos: <span id="totalProducts">0</span></div>
+    <div>Total Itens: <span id="totalStock">0</span></div>
+    <div>Estoque Baixo: <span id="lowStock">0</span></div>
+</section>
+
+<!-- FORM -->
+<section class="form">
+    <input id="name" placeholder="Produto">
+    <input id="qty" type="number" placeholder="Qtd">
+    <input id="price" type="number" placeholder="Preço">
+    <button onclick="addProduct()">Adicionar</button>
+</section>
+
+<!-- EXCEL -->
+<section style="padding:20px;">
+    <input type="file" id="uploadExcel">
+    <button onclick="importExcel()">Importar Excel</button>
+    <button onclick="exportExcel()">Exportar Relatório</button>
+</section>
+
+<!-- SEARCH -->
+<input id="search" placeholder="Buscar produto...">
+
+<!-- TABLE -->
+<table>
+    <thead>
+        <tr>
+            <th>Produto</th>
+            <th>Qtd</th>
+            <th>Preço</th>
+            <th>Status</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody id="table"></tbody>
+</table>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
